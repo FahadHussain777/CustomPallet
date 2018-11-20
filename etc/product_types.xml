@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Catalog:etc/product_types.xsd">
+    <type name="custompallet" label="Custom Pallet" modelInstance="Ec\CustomPallet\Model\Product\Type\CustomPallet" indexPriority="30" sortOrder="20" isQty="true" >
+        <priceModel instance="Ec\CustomPallet\Model\Product\Price"/>
+        <indexerModel instance="Ec\CustomPallet\Model\ResourceModel\Indexer\Price"/>
+        <stockIndexerModel instance="Ec\CustomPallet\Model\ResourceModel\Indexer\Stock"/>
+        <customAttributes>
+            <attribute name="is_real_product" value="true"/>
+            <attribute name="refundable" value="false"/>
+            <attribute name="taxable" value="true"/>
+        </customAttributes>
+    </type>
+</config>

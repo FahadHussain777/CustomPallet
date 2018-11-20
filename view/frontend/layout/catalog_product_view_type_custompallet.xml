@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Ec_CustomPallet::css/pallates.css" />
+    </head>
+    <body>
+        <referenceContainer name="product.info.media">
+            <referenceContainer name="skip_gallery_before.wrapper" remove="true"/>
+            <referenceBlock name="skip_gallery_after.target" remove="true"/>
+            <referenceBlock name="skip_gallery_before.target" remove="true"/>
+            <referenceBlock name="product.info.media.image" remove="true"/>
+            <referenceBlock name="product.info.media.image" remove="true"/>
+            <referenceContainer name="action-skip-wrapper" remove="true"/>
+            <block class="Ec\CustomPallet\Block\Product\View\Element\Template" name="pallates" template="Ec_CustomPallet::product/view/pallets.phtml">
+                <block class="Ec\CustomPallet\Block\Product\View\Element\Template" name="4wellPalette" template="Ec_CustomPallet::product/view/4wellPalette.phtml" />
+                <block class="Ec\CustomPallet\Block\Product\View\Element\Template" name="6wellPalette" template="Ec_CustomPallet::product/view/6wellPalette.phtml" />
+                <block class="Ec\CustomPallet\Block\Product\View\Element\Template" name="lgPalette" template="Ec_CustomPallet::product/view/lgPalette.phtml" />
+                <block class="Ec\CustomPallet\Block\Product\View\Element\Template" name="MK07-1Nudes" template="Ec_CustomPallet::product/view/MK07-1Nudes.phtml" />
+            </block>
+        </referenceContainer>
+        <referenceBlock name="product.info">
+            <action method="setTemplate">
+                <argument name="template" xsi:type="string">Ec_CustomPallet::product/view/form.phtml</argument>
+            </action>
+        </referenceBlock>
+        <referenceBlock name="product.info.options">
+            <block class="Ec\CustomPallet\Block\Product\View\Options\Type\Select"
+                   name="product.info.options.select" as="select"
+                   template="Ec_CustomPallet::product/view/options/type/select.phtml"
+            />
+        </referenceBlock>
+        <referenceBlock name="product.info.main">
+            <block class="Magento\Framework\View\Element\Template" template="Ec_CustomPallet::optionswitcher.phtml" name="custompallet.form.option.switcher" after="product.info.price" />
+        </referenceBlock>
+        <referenceBlock name="product.info.addtocart.additional">
+            <action method="setTemplate">
+                <argument name="template" xsi:type="string">Ec_CustomPallet::addtocart.phtml</argument>
+            </action>
+        </referenceBlock>
+    </body>
+</page>

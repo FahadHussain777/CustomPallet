@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Ec\CustomPallet\Block\Product\View\Options\Type\Select">
+        <plugin name="ec_custompallet_options_type_select" type="Ec\CustomPallet\Plugin\Option\Select"/>
+    </type>
+</config>

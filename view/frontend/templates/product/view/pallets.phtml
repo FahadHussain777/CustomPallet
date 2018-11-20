@@ -1,0 +1,28 @@
+<?php
+if(null !== $block->getRequest()->getParam('product_id')){
+    $palletType = $block->getPalletType($block->getRequest()->getParam('product_id'));
+}else{
+    $palletType = $block->getPalletType($block->getRequest()->getParam('id'));
+}
+$palletType = str_replace(' ','',$palletType);
+$imageurl = $block->getViewFileUrl('Ec_CustomPallet::images/'.$palletType.'.jpg');
+$closeButtonImageUrl = $block->getViewFileUrl('Ec_CustomPallet::images/close_button.png');
+?>
+<?php
+    echo $block->getChildBlock($palletType)
+        ->setData('pallet_image',$imageurl)
+        ->setData('close_image',$closeButtonImageUrl)
+        ->toHtml();
+?>
+<?php if($block->isCartUpdatePage()):?>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "palletUpdate":{
+                "productOptions":<?php echo $option = $block->getAdditionalOptions(); ?>,
+                "palletType":"<?php echo $palletType; ?>"
+            }
+        }
+    }
+</script>
+<?php endif;?>

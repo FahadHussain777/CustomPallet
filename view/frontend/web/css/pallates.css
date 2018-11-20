@@ -1,0 +1,231 @@
+.pallatesContainer {
+	clear:both;
+	padding:40px 0;
+}
+.pallatesContainer *,
+.pallatesContainer *:before,
+.pallatesContainer *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/** Clears **/
+.DraggedPallates:after,
+#wrapper:after{ display:block; content:"."; clear:both; font-size:0; line-height:0; height:0; overflow:hidden;}
+.DraggedPallates,
+#wrapper{ zoom:1;}
+
+
+#options{
+	width: 400px;
+	border:1px solid black;
+	float:right; padding:20px;
+}
+.pallates-grid{ max-height:394px; overflow:auto;}
+.circle_face {
+	margin-left:0px;
+	margin-top:0px;
+	border-radius: 50%;
+	/* behavior: url(PIE.htc);*/
+	border: 1px solid black;
+	width: 41px;
+	height: 41px;
+	margin: 5px;
+}
+
+.circle_eye {
+	margin-left:0px;
+	margin-top:0px;
+	border-radius: 50%;
+	/* behavior: url(PIE.htc);*/
+	border: 1px solid black;
+	width: 41px;
+	height: 41px;
+	margin: 5px;
+}
+
+.circle_swatch {
+	margin-left:0px;
+	margin-top:0px;
+	border-radius: 50%;
+	/* behavior: url(PIE.htc);*/
+	width: 41px;
+	height: 41px;
+	margin: 5px;
+}
+
+/*.DraggedPallates{ background:url(../images/DraggedPallates.jpg) no-repeat 0 0; background-size:540px;}*/
+.pallet-image{ position: relative; max-width: 400px;}
+.pallet-image table { position: absolute; top: 54px; left: 60px; width: auto;}
+.pallet-image table td { display: inline-block; padding: 0;}
+.pallet-image.col-six table { top: 46px; left: 92px;}
+.pallet-image.col-six .circle_face { width: 75px; height: 75px; margin: 4px 10px;}
+.pallet-image.col-six .circle_eye { width: 61px; height: 61px; margin: 6px 5px;}
+.pallet-image.col-four table { top: 35px; left: 101px;}
+.pallet-image.col-four .circle_face { width: 80px; height: 80px; margin: 6px 5px;}
+
+.swatch-attribute .mageworx-swatch-option { border-radius: 100px;}
+
+.pallet-image table.lgpallet_eye { top: 256px; left: 63px;}
+.pallet-image table.lgpallet_eye .circle_eye { width: 54px;	height: 54px; margin: 5px 4px;}
+.pallet-image table.lgpallet_face { top: 325px;	left: 65px;}
+.pallet-image table.lgpallet_face .circle_face { width: 75px; height: 75px; margin: 5px 4px;}
+
+#frame{
+	width:650px;
+	//background-image: url("../images/UK-Map.gif");
+	background-repeat: repeat-y;
+    	background-position: 0 0;
+    	float:LEFT;
+}
+#frame h2{ text-transform:uppercase; margin-bottom:20px;}
+#tbldevs{ overflow:hidden; padding:61px 0 50px 71px;
+}
+
+#tbldevs > .ui-droppable{ float:left; margin:12px 0 0 13px;}
+#tbldevs > .ui-droppable:nth-child(5n+1){ clear:both;}
+
+.drag1 {
+	margin-left:15px;
+	margin-top:15px;
+	border-radius: 50%;
+	 behavior: url(PIE.htc); float:left;
+
+	width:64px;
+	height:64px;
+}
+
+
+
+#drag2 {
+	margin-left:15px;
+	margin-top:15px;
+	background-image: url("../images/dw_32x32.png");
+	width:32px;
+	height:32px;
+}
+
+#drag3 {
+	margin-left:15px;
+	margin-top:15px;
+	background-image: url("../images/fla_32x32.png");
+	width:32px;
+	height:32px;
+}
+
+#drag4 {
+	margin-left:15px;
+	margin-top:15px;
+	background-image: url("../images/flex_32x32.png");
+	width:32px;
+	height:32px;
+}
+
+#drag5 {
+	margin-left:15px;
+	margin-top:15px;
+	background-image: url("../images/pdf_32x32.png");
+	width:32px;
+	height:32px;
+}
+
+#drag6 {
+	margin-left:15px;
+	margin-top:15px;
+	background-image: url("../images/ps_32x32.png");
+	width:32px;
+	height:32px;
+}
+
+.ui-draggable-helperMoving {
+	border: 1px dotted #000;
+	padding: 6px;
+	background: #fff;
+	font-size: 1.2em;
+	width:100px;
+	height:100px;
+}
+
+.ui-draggable-helperStoped {
+	border: 1px solid #000;
+	width:5px;
+	height:5px;
+}
+
+
+
+/* classes for dragged stuff */
+.dragged1 {
+	position:absolute;
+	background-image: url("../images/cf_32x32.png");
+	width:32px;
+	height:32px;
+}
+
+.dragged2 {
+	position:absolute;
+	background-image: url("../images/dw_32x32.png");
+	width:32px;
+	height:32px;
+}
+
+.dragged3 {
+	position:absolute;
+	background-image: url("../images/fla_32x32.png");
+	width:32px;
+	height:32px;
+}
+
+.dragged4 {
+	position:absolute;
+	background-image: url("../images/flex_32x32.png");
+	width:32px;
+	height:32px;
+}
+
+.dragged5 {
+	position:absolute;
+	background-image: url("../images/pdf_32x32.png");
+	width:32px;
+	height:32px;
+}
+
+.dragged6 {
+	position:absolute;
+	background-image: url("../images/ps_32x32.png");
+	width:32px;
+	height:32px;
+}
+
+
+#element{
+	border:1px solid red
+}
+
+.page-layout-1column.pallet-index-index .product-info-main {
+	width: 100%;}
+
+/****** LG Pallete Eye Face ******/
+.pallet-image.col-six .lgpallet_eye {
+	top: 60px;
+	left: 30px;
+}
+
+.pallet-image.col-six .lgpallet_eye .circle_eye {
+	margin: 8px 3px;
+}
+
+.pallet-image.col-six .lgpallet_face {
+	left: auto;
+	right: 24px;
+	top: 42px;
+}
+
+.pallet-image.col-six .lgpallet_face .circle_face {
+	width: 60px;
+	height: 60px;
+	margin: 4px 3px;
+}
