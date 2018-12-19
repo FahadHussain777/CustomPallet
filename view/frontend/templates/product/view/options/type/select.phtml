@@ -14,7 +14,7 @@ $_option = $block->getOption();
 // Removed Required Class
 //$class = ($_option->getIsRequire()) ? ' required' : '';
 ?>
-<div class="field" >
+<div class="field"  style="display: none">
     <label class="label" for="select_<?= /* @escapeNotVerified */ $_option->getId() ?>">
         <span><?= $block->escapeHtml($_option->getTitle()) ?></span>
     </label>
