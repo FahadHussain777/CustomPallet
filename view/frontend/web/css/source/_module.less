@@ -1,0 +1,113 @@
+// /**
+//  * Copyright © Magento, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//	* @fileDir - \web\css\source\_module.less
+//  */
+
+/**
+ * Common
+ */
+ & when (@media-common = true) {	
+	.pallets-media{
+		background:rgba(0,0,0,.7);
+		position: relative;
+		max-width: 600px;
+		padding:10%;
+		margin: 0 auto 20px;
+		
+		&__container{
+			zoom:1;
+			text-align:center;
+			
+			&:after{ 
+				display:block; 
+				content:"."; 
+				clear:both; 
+				font-size:0; 
+				line-height:0; 
+				height:0; 
+				overflow:hidden;
+			}
+		}
+		&__items{
+			overflow:hidden;
+			margin:0 -10px;
+		}
+		&__item{
+			float:left;
+			padding:10px;
+		}
+		&__box{
+			position:relative;
+		}
+		
+		&__circle{
+			position:absolute;
+			left:0;
+			right:0;
+			top:0;
+			bottom:0;
+			border-radius: 100%;
+			border: 2px solid #fff;
+			background-size: 200%;
+			background-position: 50%;
+		}
+		
+		&__delete-pallet{
+			visibility:hidden;
+			vertical-align:top;
+			width: 20px;
+			height: 20px;
+			position:absolute;
+		}
+		
+		&__blank{
+			width:100%;
+			vertical-align:top;
+		}
+	}
+	
+	.pallets-column-{
+		&2{
+			.pallets-media__item{
+				width:50%;
+			}
+		}
+		&4{
+			.pallets-media__item{
+				width:25%;
+			}
+		}
+		&3,
+		&6{
+			.pallets-media__item{
+				width:33.333%;
+			}
+		}
+	}
+}
+
+
+/**
+ * Desktop
+ */
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+	
+	
+}
+
+
+/**
+ * Mobile
+ */
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+	
+}
+
+
+
+
+
+
+
+

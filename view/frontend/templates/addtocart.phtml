@@ -9,7 +9,7 @@
 /** @var $block \Magento\Catalog\Block\Product\View */
 ?>
 <?php $_product = $block->getProduct(); ?>
-<?php $buttonTitle = __('Add to Cart'); ?>
+<?php $buttonTitle = __('Add to Bag'); ?>
 <?php if ($_product->isSaleable()): ?>
     <div class="box-tocart">
         <div id="pallet-error" style="color: #ff2325;width: 600px; text-align: right" hidden="true">Please choose all options</div>
@@ -17,20 +17,27 @@
             <?php if ($block->shouldRenderQuantity()): ?>
                 <div class="field qty">
                     <label class="label" for="qty"><span><?= /* @escapeNotVerified */ __('Qty') ?></span></label>
-                    <div class="control">
-                        <input type="number"
-                               name="qty"
-                               id="qty"
-                               value="<?= /* @escapeNotVerified */ $block->getProductDefaultQty() * 1 ?>"
-                               title="<?= /* @escapeNotVerified */ __('Qty') ?>"
-                               class="input-text qty"
-                               data-validate="<?= $block->escapeHtml(json_encode($block->getQuantityValidators())) ?>"
-                        />
-                    </div>
+                    <div class="control qty_change" data-bind="scope: 'qty_change'">
+						<a href="javascript:void(0)" class="dec_qty" data-bind="click: decreaseQty">
+							<i class="decrement-icon">-</i>
+						</a>
+						<input  data-bind="value: qty()"
+								type="number"
+								name="qty"
+								id="qty"
+								readonly="readonly"
+								title="<?php /* @escapeNotVerified */ echo __('Quantity') ?>" 
+								class="input-text qty"
+								data-validate="<?php echo $block->escapeHtml(json_encode($block->getQuantityValidators())) ?>"
+								/>
+						<a href="javascript:void(0)" class="inc_qty" data-bind="click: increaseQty">
+							<i class="increment-icon">+</i>
+						</a>
+					</div>
                 </div>
             <?php endif; ?>
-            <input id="product-addtocart-button-clone" class="action primary tocart " type="button" value="Add to Cart"/>
-            <div class="actions" style="display: none">
+            <input id="product-addtocart-button-clone" class="action primary tocart " type="button" value="Add to Bag"/>
+            <div class="actions" style="display:none">
                 <button type="submit"
                         title="<?= /* @escapeNotVerified */ $buttonTitle ?>"
                         class="action primary tocart"
@@ -48,6 +55,17 @@
         "#product_addtocart_form": {
             "Magento_Catalog/product/view/validation": {
                 "radioCheckboxClosest": ".nested"
+            }
+        },
+
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "qty_change": {
+                        "component": "Magento_Catalog/js/qty_change",
+                        "defaultQty": <?php echo $block->getProductDefaultQty() * 1 ?>
+                    }
+                 }
             }
         }
     }

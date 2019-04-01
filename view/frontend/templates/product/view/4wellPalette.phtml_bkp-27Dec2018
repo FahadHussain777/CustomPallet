@@ -1,0 +1,32 @@
+<?php
+$closeButtonImageUrl = $block->getData('close_image');
+?>
+<div class="pallet-image col-four" >
+    <img src="<?= $block->getData('pallet_image') ?>">
+    <table>
+        <tr >
+            <td>
+                <div class="circle_face" id="sheer_face_1" >
+                    <img src="<?= $closeButtonImageUrl ?>" style="visibility:hidden;width: 20px;height: 20px;" >
+                </div>
+            </td>
+            <td>
+                <div class="circle_face" id="sheer_face_2">
+                    <img src="<?= $closeButtonImageUrl ?>" style="visibility:hidden;width: 20px;height: 20px;" >
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="circle_face" id="sheer_face_3">
+                    <img src="<?= $closeButtonImageUrl ?>" style="visibility:hidden;width: 20px;height: 20px;" >
+                </div>
+            </td>
+            <td>
+                <div class="circle_face" id="sheer_face_4">
+                    <img src="<?= $closeButtonImageUrl ?>" style="visibility:hidden;width: 20px;height: 20px;" >
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>

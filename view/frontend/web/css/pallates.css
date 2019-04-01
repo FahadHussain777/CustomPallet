@@ -25,54 +25,34 @@
 	float:right; padding:20px;
 }
 .pallates-grid{ max-height:394px; overflow:auto;}
-.circle_face {
-	margin-left:0px;
-	margin-top:0px;
-	border-radius: 50%;
-	/* behavior: url(PIE.htc);*/
-	border: 1px solid black;
-	width: 41px;
-	height: 41px;
-	margin: 5px;
-}
-
-.circle_eye {
-	margin-left:0px;
-	margin-top:0px;
-	border-radius: 50%;
-	/* behavior: url(PIE.htc);*/
-	border: 1px solid black;
-	width: 41px;
-	height: 41px;
-	margin: 5px;
-}
-
 .circle_swatch {
 	margin-left:0px;
 	margin-top:0px;
 	border-radius: 50%;
-	/* behavior: url(PIE.htc);*/
 	width: 41px;
 	height: 41px;
 	margin: 5px;
 }
-
+.product-info-main .product-options-bottom .box-tocart .field.qty .label{
+	display:none;
+}
 /*.DraggedPallates{ background:url(../images/DraggedPallates.jpg) no-repeat 0 0; background-size:540px;}*/
-.pallet-image{ position: relative; max-width: 400px;}
-.pallet-image table { position: absolute; top: 54px; left: 60px; width: auto;}
-.pallet-image table td { display: inline-block; padding: 0;}
-.pallet-image.col-six table { top: 46px; left: 92px;}
-.pallet-image.col-six .circle_face { width: 75px; height: 75px; margin: 4px 10px;}
-.pallet-image.col-six .circle_eye { width: 61px; height: 61px; margin: 6px 5px;}
-.pallet-image.col-four table { top: 35px; left: 101px;}
-.pallet-image.col-four .circle_face { width: 80px; height: 80px; margin: 6px 5px;}
+.pallet-image{ position: relative; max-width: 600px; margin:0 auto 20px; background:rgba(0,0,0,.7) /*url(../images/bkg_pallet.png) no-repeat 0 0*/;}
+.pallet-image > img{
+	opacity:0;
+}
+.swatch-attribute .mageworx-swatch-option { border-radius: 100px; background-size: 60px !important; border:0!important; padding: 0; margin: 0 10px 10px 0;}
+.product-add-form .product-options-wrapper .field .control{
+	width:100%!important;
+}
+.mageworx-swatch-option.image:not(.disabled):hover, .mageworx-swatch-option.color:not(.disabled):hover{
+	outline:0;
+}
 
-.swatch-attribute .mageworx-swatch-option { border-radius: 100px;}
-
-.pallet-image table.lgpallet_eye { top: 256px; left: 63px;}
-.pallet-image table.lgpallet_eye .circle_eye { width: 54px;	height: 54px; margin: 5px 4px;}
-.pallet-image table.lgpallet_face { top: 325px;	left: 65px;}
-.pallet-image table.lgpallet_face .circle_face { width: 75px; height: 75px; margin: 5px 4px;}
+/*.pallet-image table.lgpallet_eye { top: 56px; left: 63px;}
+.pallet-image table.lgpallet_eye .circle_eye { width: 54px;	height: 54px; margin: 5px 4px; background-position: 50%;}
+.pallet-image table.lgpallet_face { top: 125px;	left: 65px;}
+.pallet-image table.lgpallet_face .circle_face { width: 75px; height: 75px; margin: 5px 4px; background-position: 50%;}*/
 
 #frame{
 	width:650px;
@@ -209,23 +189,73 @@
 	width: 100%;}
 
 /****** LG Pallete Eye Face ******/
-.pallet-image.col-six .lgpallet_eye {
-	top: 60px;
-	left: 30px;
+
+body .mageworx-swatch-option{
+	border:0;
 }
 
-.pallet-image.col-six .lgpallet_eye .circle_eye {
-	margin: 8px 3px;
+.product-info-main .product-options-bottom{
+	position:relative;
+	z-index:2;
+}
+.product-info-main .product-options-bottom .box-tocart .action.tocart{
+	text-transform:uppercase;
 }
 
-.pallet-image.col-six .lgpallet_face {
-	left: auto;
-	right: 24px;
-	top: 42px;
+.pallets-color-field .label{
+	font-size: 15px;
+	color: #000;
+	text-transform:uppercase;
+	margin: 20px 0 0!important;
+	font-weight:normal!important;
+	letter-spacing: 0.1em;
+}
+.pallets-color-field .label:before{
+	content:'Color: ';
 }
 
-.pallet-image.col-six .lgpallet_face .circle_face {
-	width: 60px;
-	height: 60px;
-	margin: 4px 3px;
+.pallates-switcher {
+	margin-bottom: 20px;
+	overflow: hidden;
+}
+.pallates-switcher > div {
+    display: inline-block;
+    vertical-align: top;
+    padding: 5px 20px;
+    line-height: 22px;
+    float: left;
+    border: 1px #000 solid;
+	font-size: 15px;
+	text-transform:uppercase;
+	letter-spacing: 0.1em;
+}
+
+.pallates-switcher > div.active{
+	background:#000;
+	color:#fff;
+}
+.pallates-switcher > div.active a{
+	color:#fff;
+}
+
+#product-options-wrapper .instruction{
+	margin-top: 20px;
+	color: red;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+.swatch-fieldset .label,
+.product-info-main .net-wt{
+	display:none!important;
+}
+
+.product-info-main .product-options-bottom{
+	padding-top:20px;
+}
+.product-info-main .product-new-price{
+	position: relative;
+	top: 10px;
+}
+.mageworx-swatch-option{
+	z-index:2;
 }

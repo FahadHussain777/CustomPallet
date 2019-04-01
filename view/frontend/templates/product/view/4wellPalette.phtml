@@ -1,32 +1,24 @@
 <?php
-$closeButtonImageUrl = $block->getData('close_image');
+	$closeButtonImageUrl = $block->getData('close_image');
+	$palletCount = 4;
+	$palletPerRow = 4;
 ?>
-<div class="pallet-image col-four" >
-    <img src="<?= $block->getData('pallet_image') ?>">
-    <table>
-        <tr >
-            <td>
-                <div class="circle_face" id="sheer_face_1" >
-                    <img src="<?= $closeButtonImageUrl ?>" style="visibility:hidden;width: 20px;height: 20px;" >
-                </div>
-            </td>
-            <td>
-                <div class="circle_face" id="sheer_face_2">
-                    <img src="<?= $closeButtonImageUrl ?>" style="visibility:hidden;width: 20px;height: 20px;" >
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <div class="circle_face" id="sheer_face_3">
-                    <img src="<?= $closeButtonImageUrl ?>" style="visibility:hidden;width: 20px;height: 20px;" >
-                </div>
-            </td>
-            <td>
-                <div class="circle_face" id="sheer_face_4">
-                    <img src="<?= $closeButtonImageUrl ?>" style="visibility:hidden;width: 20px;height: 20px;" >
-                </div>
-            </td>
-        </tr>
-    </table>
+<div class="pallets-media pallets-box--<?= $palletCount;?>wellPalette <?= 'pallets-column-' .$palletCount;?>">
+    <?php /*<div class="pallets-box__image"><img src="<?= $block->getData('pallet_image') ?>"></div>*/?>
+	<div class="pallets-media__container">
+		<!--div class="pallets-media__items" style="column-count://$palletPerRow;"-->
+		<div class="pallets-media__items">
+			<?php  
+				for ($palletBox = 1; $palletBox <= $palletCount; $palletBox++) { ?>
+					<div class="pallets-media__item"><div class="pallets-media__box">
+						<img src="<?= $this->getViewFileUrl('Ec_CustomPallet/images/__blank.gif'); ?>" alt="blank" class="pallets-media__blank">
+						<div class="circle_face pallets-media__circle" id="<?php echo 'sheer_face_'.$palletBox;?>" >
+							<img src="<?= $closeButtonImageUrl ?>" class="pallets-media__delete-pallet" style="visibility: hidden;">
+						</div>
+					</div>
+					</div>
+				<?php }
+			?>
+		</div>
+	</div>
 </div>

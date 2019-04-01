@@ -48,8 +48,6 @@ define([
             var _eyeswitch = $('div.eye_swatch_switch');
             var eyeStatus = _faceswitch.css('display');
             var faceStatus = _eyeswitch.css('display');
-            console.log(eyeStatus);
-            console.log(faceStatus);
             if((eyeStatus == 'inline' && faceStatus == 'inline')|| (eyeStatus == 'block' && faceStatus == 'block')){
                 var eyeswatch = $('div.swatch-attribute-options.clearfix').children('div.eye_swatch:first-child');
                 var eyelabel = $('label.label[for="select_'+eyeswatch.attr('option-id')+'"]');

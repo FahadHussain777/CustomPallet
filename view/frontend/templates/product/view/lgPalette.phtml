@@ -1,4 +1,47 @@
 <?php
+	$closeButtonImageUrl = $block->getData('close_image');
+	$palletCount1 = 16;
+	$palletCount2 = 6;
+	$palletPerRow1 = 4;
+	$palletPerRow2 = 2;
+?>
+<div class="pallets-media pallets-box--<?= $palletCount1;?>wellPalette" style="overflow:hidden;">
+    <?php /*<div class="pallets-box__image"><img src="<?= $block->getData('pallet_image') ?>"></div>*/?>
+	<div class="pallets-media__container <?= 'pallets-column-' .$palletPerRow1;?>" style="width:65%; float:left; padding-right: 20px;">
+		<div class="pallets-media__items">
+			<?php  
+				for ($palletBox1 = 1; $palletBox1 <= $palletCount1; $palletBox1++) { ?>
+					<div class="pallets-media__item"><div class="pallets-media__box">
+						<img src="<?= $this->getViewFileUrl('Ec_CustomPallet/images/__blank.gif'); ?>" alt="blank" class="pallets-media__blank">
+						<div class="circle_eye pallets-media__circle" id="<?php echo 'eye_color_'.$palletBox1;?>" >
+							<img src="<?= $closeButtonImageUrl ?>" class="pallets-media__delete-pallet" style="visibility: hidden;">
+						</div>
+					</div>
+					</div>
+				<?php }
+			?>
+		</div>
+	</div>
+
+    <?php /*<div class="pallets-box__image"><img src="<?= $block->getData('pallet_image') ?>"></div>*/?>
+	<div class="pallets-media__container <?= 'pallets-column-' .$palletPerRow2;?>" style="width:35%; padding-top: 2.5%; float:left;">
+		<div class="pallets-media__items">
+			<?php  
+				for ($palletBox2 = 1; $palletBox2 <= $palletCount2; $palletBox2++) { ?>
+					<div class="pallets-media__item"><div class="pallets-media__box">
+						<img src="<?= $this->getViewFileUrl('Ec_CustomPallet/images/__blank.gif'); ?>" alt="blank" class="pallets-media__blank">
+						<div class="circle_face pallets-media__circle" id="<?php echo 'sheer_face_'.$palletBox2;?>" >
+							<img src="<?= $closeButtonImageUrl ?>" class="pallets-media__delete-pallet" style="visibility: hidden;">
+						</div>
+					</div>
+					</div>
+				<?php }
+			?>
+		</div>
+	</div>
+</div>
+
+<?php /*<?php
 $closeButtonImageUrl = $block->getData('close_image');
 ?>
 <div class="pallet-image col-six" >
@@ -25,8 +68,6 @@ $closeButtonImageUrl = $block->getData('close_image');
                     <img src="<?= $closeButtonImageUrl ?>" style="visibility:hidden;width: 20px;height: 20px;" >
                 </div>
             </td>
-        </tr>
-        <tr>
             <td>
                 <div class="circle_eye " id="eye_color_5">
                     <img src="<?= $closeButtonImageUrl ?>" style="visibility:hidden;width: 20px;height: 20px;" >
@@ -47,8 +88,6 @@ $closeButtonImageUrl = $block->getData('close_image');
                     <img src="<?= $closeButtonImageUrl ?>" style="visibility:hidden;width: 20px;height: 20px;" >
                 </div>
             </td>
-        </tr>
-        <tr>
             <td>
                 <div class="circle_eye " id="eye_color_9" >
                     <img src="<?= $closeButtonImageUrl ?>" style="visibility:hidden;width: 20px;height: 20px;" >
@@ -71,6 +110,7 @@ $closeButtonImageUrl = $block->getData('close_image');
             </td>
         </tr>
     </table>
+	
     <table class="lgpallet_face">
         <tr>
             <td>
@@ -83,8 +123,6 @@ $closeButtonImageUrl = $block->getData('close_image');
                     <img src="<?= $closeButtonImageUrl ?>" style="visibility:hidden;width: 20px;height: 20px;" >
                 </div>
             </td>
-        </tr>
-        <tr>
             <td>
                 <div class="circle_face " id="sheer_face_3" >
                     <img src="<?= $closeButtonImageUrl ?>" style="visibility:hidden;width: 20px;height: 20px;" >
@@ -95,8 +133,6 @@ $closeButtonImageUrl = $block->getData('close_image');
                     <img src="<?= $closeButtonImageUrl ?>" style="visibility:hidden;width: 20px;height: 20px;" >
                 </div>
             </td>
-        </tr>
-        <tr>
             <td>
                 <div class="circle_face " id="sheer_face_5" >
                     <img src="<?= $closeButtonImageUrl ?>" style="visibility:hidden;width: 20px;height: 20px;" >
@@ -109,4 +145,4 @@ $closeButtonImageUrl = $block->getData('close_image');
             </td>
         </tr>
     </table>
-</div>
+</div>*/?>
