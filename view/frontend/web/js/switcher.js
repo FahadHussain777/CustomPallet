@@ -7,12 +7,25 @@ define([
 
         _init: function() {
             var $widget = this;
-            var swatch = $widget.element.children('div:first-child');
+            var widgets = $('.swatch-attribute-options.clearfix');
+            if(widgets.length == 1 ){
+            	var swatch = $widget.element.children('div:first-child');
+            	if(swatch.hasClass('eye_swatch')){
+            		var _switch = $('div.eye_swatch_switch');
+            		_switch.addClass('active');
+            	}
+            	else{
+            		var _switch = $('div.face_swatch_switch');
+            		_switch.addClass('active');                
+            	}
+            }
+            var swatch = $widget.element.children('div:first-child');            
             var label = $('label.label[for="select_'+swatch.attr('option-id')+'"]');
             if(swatch.hasClass('eye_swatch')){
                 var opposite = 'face_swatch';
                 var _switch = $('div.eye_swatch_switch');
                 _switch.css('display','unset');
+				//_switch.addClass('active');
                 this._setEvent(label,_switch,opposite);
             }else if(swatch.hasClass('face_swatch')){
                 var _switch = $('div.face_swatch_switch');
